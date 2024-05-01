@@ -31,7 +31,7 @@ const RidePay = ({ pickupCoordinates, dropoffCoordinates }) => {
         </div>
       </RidePayout>
       <DashGrid>
-        <div className="button">Search</div>
+        <div className="button">Press Attendence</div>
       </DashGrid>
     </>
   );
