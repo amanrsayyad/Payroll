@@ -14,6 +14,8 @@ import { IoIosAdd } from "react-icons/io";
 import { FaAmazonPay } from "react-icons/fa";
 import { FaArrowLeftLong, FaCircleDot } from "react-icons/fa6";
 import { SiSquare } from "react-icons/si";
+import { SiStartrek } from "react-icons/si";
+import line from "../assets/line.png";
 
 export {
   IoEyeOutline,
@@ -33,4 +35,6 @@ export {
   FaArrowLeftLong,
   FaCircleDot,
   SiSquare,
+  SiStartrek,
+  line,
 };

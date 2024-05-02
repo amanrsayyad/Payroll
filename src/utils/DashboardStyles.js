@@ -20,9 +20,13 @@ export const ProfileMain = styled.div`
     color: #fff;
 
     h3 {
-      margin-bottom: 0.4rem;
-      font-size: 25px;
+      margin-bottom: 0.2rem;
+      font-size: 30px;
       font-weight: 500;
+    }
+    p {
+      font-size: 20px;
+      font-weight: 400;
     }
   }
 `;
@@ -144,7 +148,7 @@ export const DashHeader = styled.div`
   padding-top: 25px;
 
   h3 {
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 500;
   }
   .header-icon {
@@ -164,7 +168,7 @@ export const DashHeader = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 17px;
+    font-size: 18px;
     padding: 11px 35px;
     border-radius: 15px;
     background-color: #228b22;
@@ -195,7 +199,7 @@ export const DashList = styled.table`
       text-align: left;
       padding: 10px 55px;
       font-weight: 400;
-      font-size: 17px;
+      font-size: 18px;
 
       .icon {
         margin-right: 0.7rem;
@@ -207,7 +211,7 @@ export const DashList = styled.table`
       text-align: left;
       padding: 10px 55px;
       font-weight: 400;
-      font-size: 15px;
+      font-size: 17px;
       border-bottom: 1px solid #228b22;
 
       button {

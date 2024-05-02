@@ -42,7 +42,6 @@ const Header = () => {
             Hi, {userData.name} <MdKeyboardArrowDown className="icon" />
           </p>
         )}
-        ;
       </Profile>
     </HeaderMain>
   );

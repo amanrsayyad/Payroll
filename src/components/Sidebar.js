@@ -168,6 +168,7 @@ const SidebarMain = styled.div`
     h3 {
       font-weight: 500;
       margin-left: 0.5rem;
+      font-size: 25px;
       color: #1d1d1d;
 
       span {
@@ -193,7 +194,8 @@ const NavList = styled.ul`
       align-items: center;
       justify-content: flex-start;
       color: #1d1d1d;
-      font-size: 16px;
+      font-size: 17px;
+      font-weight: 500;
 
       .navIco {
         display: flex;
