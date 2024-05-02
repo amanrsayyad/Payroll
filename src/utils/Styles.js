@@ -56,19 +56,25 @@ export const HeroGrid = styled.div`
       background-color: darkgreen;
 
       .data {
-        padding-top: 110px;
+        padding-top: 70px;
         padding-left: 75px;
 
         h3 {
-          font-size: 55px;
+          font-size: 50px;
           text-transform: uppercase;
-          line-height: 50px;
+          line-height: 46px;
           color: #fff;
           font-family: "Jersey 15", sans-serif;
         }
+        p {
+          font-size: 30px;
+          color: #fff;
+          font-family: "Jersey 15", sans-serif;
+          margin-top: 0.4rem;
+        }
         .modules {
           position: relative;
-          height: 35vh;
+          height: 33vh;
           width: 80%;
           margin: 1.9rem 0rem;
 
@@ -99,17 +105,42 @@ export const HeroGrid = styled.div`
             right: 0%;
             transform: rotate(-180deg);
           }
+          .module-container {
+            position: absolute;
+            top: 16%;
+            right: 0%;
+            width: 100%;
+
+            .module-grid {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              grid-gap: 1rem;
+              padding: 0px 35px;
+              .module-card {
+                background-color: #fff;
+                padding: 10px 15px;
+                border-radius: 10px;
+                font-weight: 500;
+
+                img {
+                  width: 40px;
+                  height: 40px;
+                  margin-right: 10px;
+                }
+              }
+            }
+          }
         }
         button {
           margin-top: 1rem;
           padding: 7px 15px;
           background-color: #fff;
           border-radius: 8px;
-          font-size: 25px;
+          font-size: 30px;
           font-weight: 500;
           border: none;
           outline: none;
-          font-family: "Sedgwick Ave Display", cursive;
+          font-family: "Jersey 15", sans-serif;
           cursor: pointer;
 
           .icon {

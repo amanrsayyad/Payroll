@@ -16,6 +16,12 @@ import { FaArrowLeftLong, FaCircleDot } from "react-icons/fa6";
 import { SiSquare } from "react-icons/si";
 import { SiStartrek } from "react-icons/si";
 import line from "../assets/line.png";
+import attendance from "../assets/attendance.png";
+import emp from "../assets/emp.png";
+import map from "../assets/map.png";
+import payroll from "../assets/payroll.png";
+import ui from "../assets/ui.png";
+import sec from "../assets/sec.png";
 
 export {
   IoEyeOutline,
@@ -37,4 +43,10 @@ export {
   SiSquare,
   SiStartrek,
   line,
+  attendance,
+  emp,
+  map,
+  payroll,
+  ui,
+  sec,
 };

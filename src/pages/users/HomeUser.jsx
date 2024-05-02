@@ -5,7 +5,16 @@ import {
   DashboardMain,
   HeroGrid,
 } from "../../utils/Styles.js";
-import { SiStartrek, line } from "../../utils/Icons.js";
+import {
+  SiStartrek,
+  line,
+  attendance,
+  emp,
+  map,
+  payroll,
+  ui,
+  sec,
+} from "../../utils/Icons.js";
 import Sidebar from "../../components/Sidebar.js";
 import Header from "../../components/Header.js";
 import mapboxgl from "mapbox-gl";
@@ -44,11 +53,40 @@ const HomeUser = () => {
                 <div className="data">
                   <h3>The Best Payroll With</h3>
                   <h3>Advanced Modules</h3>
+                  <p>Streamline Your Payroll, Elevate Your Business.</p>
                   <div className="modules">
                     <img src={line} className="line1 lineImg" alt="" />
                     <img src={line} className="line2 lineImg" alt="" />
                     <img src={line} className="line3 lineImg" alt="" />
                     <img src={line} className="line4 lineImg" alt="" />
+                    <div className="module-container d-flex">
+                      <div className="module-grid">
+                        <div className="module-card d-flex">
+                          <img src={ui} alt="" />
+                          Great UI
+                        </div>
+                        <div className="module-card d-flex">
+                          <img src={sec} alt="" />
+                          Safe & Secure
+                        </div>
+                        <div className="module-card d-flex">
+                          <img src={map} alt="" />
+                          GPS Traking
+                        </div>
+                        <div className="module-card d-flex">
+                          <img src={attendance} alt="" />
+                          Attendence
+                        </div>
+                        <div className="module-card d-flex">
+                          <img src={payroll} alt="" />
+                          Payroll
+                        </div>
+                        <div className="module-card d-flex">
+                          <img src={emp} alt="" />
+                          Manage Employee
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <button className="d-flex">
                     Go Pro <SiStartrek className="icon" />
