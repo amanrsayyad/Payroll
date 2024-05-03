@@ -52,3 +52,9 @@ ul {
   height: 100% !important;
   border-radius: 8px;
 }
+.red-bg {
+  background-color: #e8e8e8;
+  border: 2px solid #228b22;
+  border-radius: 8px;
+  color: #228b22;
+}

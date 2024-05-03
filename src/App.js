@@ -6,6 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import "mapbox-gl/dist/mapbox-gl.css";
+import { Toaster } from "alert";
 import "./App.css";
 
 // Auth Imports
@@ -45,6 +46,7 @@ function App() {
 
   return (
     <Router>
+      <Toaster position="top-right" />
       <Routes>
         {routeCondition === true && (
           <>

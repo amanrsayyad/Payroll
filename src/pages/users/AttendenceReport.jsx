@@ -56,29 +56,33 @@ const AttendenceReport = () => {
             <Border></Border>
             <DashList>
               <thead>
-                <th>City</th>
-                <th>Employee Name</th>
-                <th>Time</th>
                 <th>Date</th>
+                <th>Ride Pay</th>
+                <th>Pick Up Location</th>
+                <th>Drop Off Location</th>
               </thead>
               {getAttendence &&
                 getAttendence.map((item) => {
+                  console.log(getAttendence.length);
                   return (
                     <>
                       {item.userId === userName._id ? (
                         <tbody key={item._id}>
-                          <td>{item.city}</td>
-                          <td>{item.employeeName}</td>
-                          <td>{item.time}</td>
                           <td>{item.date}</td>
+                          <td>{item.ridePay}</td>
+                          <td>{item.pickUp}</td>
+                          <td>{item.dropOff}</td>
                         </tbody>
                       ) : null}
                     </>
                   );
                 })}
               <thead>
-                <th className="jc-start">
-                  <IoTrashBinOutline className="icon" /> Delete All Listing
+                <th>
+                  <div className="jc-start">
+                    All Records
+                    <div className="number d-flex">{getAttendence.length}</div>
+                  </div>
                 </th>
                 <th></th>
                 <th></th>

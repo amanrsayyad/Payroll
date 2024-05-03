@@ -204,6 +204,12 @@ export const DashList = styled.table`
       .icon {
         margin-right: 0.7rem;
       }
+      .number {
+        font-size: 18px;
+        font-weight: 600;
+        color: #228b22;
+        margin-left: 0.7rem;
+      }
     }
   }
   tbody {

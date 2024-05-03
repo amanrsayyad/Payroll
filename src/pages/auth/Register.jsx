@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthBg, AuthCard } from "../../utils/authStyles";
 import { IoEyeOutline, IoEyeOffOutline } from "../../utils/Icons";
-import { cube } from "../../utils/Images";
 import axios from "axios";
+import { toast } from "alert";
 
 const Register = () => {
   const [PassShow, IsPassShow] = useState(false);
@@ -23,7 +23,6 @@ const Register = () => {
       setLoading(true);
       const { data } = await axios.post(
         "https://expensive-cod-turtleneck-shirt.cyclic.app/api/v1/user/user-register",
-        // "http://localhost:8080/api/v1/user/user-register",
         {
           name,
           email,
@@ -35,8 +34,10 @@ const Register = () => {
       setLoading(false);
       console.log(data);
       navigate("/sign-in");
+      toast.success("Registered Successfully");
     } catch (error) {
       setLoading(false);
+      toast.error(error);
     }
   };
 
@@ -49,7 +50,6 @@ const Register = () => {
       .get(
         "https://expensive-cod-turtleneck-shirt.cyclic.app/api/v1/category/get-category"
       )
-      // .get("http://localhost:8080/api/v1/category/get-category")
       .then((response) => {
         setGetGategory(response.data);
       });
@@ -58,12 +58,6 @@ const Register = () => {
   return (
     <AuthBg>
       <AuthCard>
-        {/* <div className="logo d-flex">
-          <img src={cube} alt="" />
-          <h3>
-            Block<span>Pay</span>
-          </h3>
-        </div> */}
         <h3>Sign Up</h3>
         <div className="border"></div>
         <form>

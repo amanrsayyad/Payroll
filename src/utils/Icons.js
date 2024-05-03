@@ -22,6 +22,7 @@ import map from "../assets/map.png";
 import payroll from "../assets/payroll.png";
 import ui from "../assets/ui.png";
 import sec from "../assets/sec.png";
+import payment from "../assets/payment.png";
 
 export {
   IoEyeOutline,
@@ -49,4 +50,5 @@ export {
   payroll,
   ui,
   sec,
+  payment,
 };

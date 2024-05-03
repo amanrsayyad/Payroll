@@ -74,29 +74,6 @@ const PressAttendence = () => {
     });
   };
 
-  const submitHandler = async () => {
-    try {
-      setLoading(true);
-      const { data } = await axios.post(
-        "https://expensive-cod-turtleneck-shirt.cyclic.app/api/v1/attendence/add-attendence",
-        // "http://localhost:8080/api/v1/attendence/add-attendence",
-        {
-          userId: userName._id,
-          latitude: currLocation.latitude,
-          longitude: currLocation.longitude,
-          city: currLocation.city,
-          time: currentTimeWithMoment,
-          date: currentDateWithMoment,
-          employeeName: userName.name,
-        }
-      );
-      setLoading(false);
-      console.log(data);
-    } catch (error) {
-      setLoading(false);
-    }
-  };
-
   return (
     <DashboardBg>
       <DashboardMain>

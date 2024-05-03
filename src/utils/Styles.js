@@ -29,14 +29,11 @@ export const DashboardGrid = styled.div`
 
   .card {
     width: 100%;
-    height: 230px;
+    height: 100%;
     border-radius: 10px;
     background-color: #fff;
 
     img {
-      height: 100%;
-      width: 50%;
-      object-fit: cover;
     }
   }
 `;
@@ -56,7 +53,7 @@ export const HeroGrid = styled.div`
       background-color: darkgreen;
 
       .data {
-        padding-top: 70px;
+        padding-top: 55px;
         padding-left: 75px;
 
         h3 {
@@ -147,6 +144,45 @@ export const HeroGrid = styled.div`
             color: brown;
             font-size: 25px;
             margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .admin-container {
+    height: 87vh;
+    border-radius: 10px;
+    .admin-data {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1rem;
+
+      .admin-card {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        /* border: 1px solid #228b22; */
+
+        h5 {
+          color: #228b22;
+          font-size: 30px;
+        }
+        .admin-img {
+          width: 70px;
+          height: 70px;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+          margin-right: 1rem;
+
+          img {
+            width: 50px;
+            height: 50px;
           }
         }
       }

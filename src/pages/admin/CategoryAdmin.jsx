@@ -39,12 +39,11 @@ const CategoryAdmin = ({ showForm, toggleForm }) => {
     try {
       setLoading(true);
       const { data } = await axios.post(
-        // "http://localhost:8080/api/v1/category/add-category",
         "https://expensive-cod-turtleneck-shirt.cyclic.app/api/v1/category/add-category",
         {
           positionName,
           department,
-        }
+        } 
       );
       setLoading(false);
       console.log(data);
@@ -59,7 +58,6 @@ const CategoryAdmin = ({ showForm, toggleForm }) => {
     try {
       setLoading(true);
       const { data } = await axios.post(
-        // "http://localhost:8080/api/v1/category/delete-category",
         "https://expensive-cod-turtleneck-shirt.cyclic.app/api/v1/category/delete-category",
         {
           categoryId: item._id,
@@ -75,7 +73,6 @@ const CategoryAdmin = ({ showForm, toggleForm }) => {
 
   useEffect(() => {
     axios
-      // .get("http://localhost:8080/api/v1/category/get-category")
       .get(
         "https://expensive-cod-turtleneck-shirt.cyclic.app/api/v1/category/get-category"
       )

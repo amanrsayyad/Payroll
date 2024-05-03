@@ -4,6 +4,7 @@ import { AuthBg, AuthCard } from "../../utils/authStyles";
 import { IoEyeOutline, IoEyeOffOutline } from "../../utils/Icons";
 import { cube } from "../../utils/Images";
 import axios from "axios";
+import { toast } from "alert";
 
 const Login = ({ setRouteCondition }) => {
   const [PassShow, IsPassShow] = useState(false);
@@ -19,7 +20,6 @@ const Login = ({ setRouteCondition }) => {
       setLoading(true);
       const { data } = await axios.post(
         "https://expensive-cod-turtleneck-shirt.cyclic.app/api/v1/user/user-login",
-        // "http://localhost:8080/api/v1/user/user-login",
         {
           email,
           password,
@@ -33,8 +33,10 @@ const Login = ({ setRouteCondition }) => {
       localStorage.setItem("login-token", JSON.stringify(data.token));
       setRouteCondition(true);
       navigate("/");
+      toast.success("Login Successfully");
     } catch (error) {
       setLoading(false);
+      toast.error(error);
     }
   };
 

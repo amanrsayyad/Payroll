@@ -11,6 +11,7 @@ import {
   FiLogOut,
   FaAmazonPay,
 } from "../utils/Icons";
+import { toast } from "alert";
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -18,12 +19,14 @@ const Sidebar = () => {
   const logoutHandler = () => {
     localStorage.removeItem("admin");
     navigate("/admin-login");
+    toast.success("Logout Successfully");
   };
 
   const logoutUser = () => {
     localStorage.removeItem("user");
     navigate("/sign-in");
     localStorage.setItem("routeCondition", JSON.stringify("false"));
+    toast.success("Logout Successfully");
   };
 
   const [routeCondition, setRouteCondition] = useState(false);

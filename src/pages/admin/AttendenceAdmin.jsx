@@ -19,7 +19,6 @@ const AttendenceAdmin = () => {
   const [getAttendence, setGetAttendence] = useState();
   useEffect(() => {
     axios
-      // .get("http://localhost:8080/api/v1/attendence/get-attendence")
       .get(
         "https://expensive-cod-turtleneck-shirt.cyclic.app/api/v1/attendence/get-attendence"
       )
@@ -42,27 +41,30 @@ const AttendenceAdmin = () => {
             <Border></Border>
             <DashList>
               <thead>
-                <th>Name</th>
                 <th>Date</th>
-                <th>Location</th>
-                <th>Action</th>
+                <th>Ride Pay</th>
+                <th>Pick Up Location</th>
+                <th>Drop Off Location</th>
               </thead>
               {getAttendence &&
                 getAttendence.map((item) => {
                   return (
                     <>
                       <tbody key={item._id}>
-                        <td>{item.city}</td>
-                        <td>{item.employeeName}</td>
-                        <td>{item.time}</td>
                         <td>{item.date}</td>
+                        <td>{item.ridePay}</td>
+                        <td>{item.pickUp}</td>
+                        <td>{item.dropOff}</td>
                       </tbody>
                     </>
                   );
                 })}
               <thead>
-                <th className="jc-start">
-                  <IoTrashBinOutline className="icon" /> Delete All Listing
+                <th>
+                  <div className="jc-start">
+                    All Records
+                    <div className="number d-flex">{getAttendence.length}</div>
+                  </div>
                 </th>
                 <th></th>
                 <th></th>

@@ -88,6 +88,8 @@ const Confirm = () => {
             <RidePay
               pickupCoordinates={pickupCoordinates}
               dropoffCoordinates={dropoffCoordinates}
+              pickup={pickup}
+              dropoff={dropoff}
             />
           </DashCard>
         </DashboardCard>
