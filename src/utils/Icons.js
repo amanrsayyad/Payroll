@@ -4,7 +4,7 @@ import {
   IoTrashBinOutline,
 } from "react-icons/io5";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { IoIosSearch } from "react-icons/io";
+import { IoIosSearch, IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { LuLayoutDashboard } from "react-icons/lu";
 import user from "../assets/user.png";
 import { FiUsers, FiLogOut } from "react-icons/fi";
@@ -23,6 +23,7 @@ import payroll from "../assets/payroll.png";
 import ui from "../assets/ui.png";
 import sec from "../assets/sec.png";
 import payment from "../assets/payment.png";
+import { MdOutlineErrorOutline } from "react-icons/md";
 
 export {
   IoEyeOutline,
@@ -51,4 +52,6 @@ export {
   ui,
   sec,
   payment,
+  MdOutlineErrorOutline,
+  IoMdCheckmarkCircleOutline,
 };

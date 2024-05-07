@@ -30,6 +30,7 @@ import ProfileUser from "./pages/users/ProfileUser";
 import AttendenceReport from "./pages/users/AttendenceReport";
 import PressAttendence from "./pages/users/PressAttendence";
 import Confirm from "./pages/users/Confirm";
+import PaymentPage from "./pages/admin/PaymentPage";
 
 function App() {
   const [showForm, setShowForm] = useState(1);
@@ -110,6 +111,14 @@ function App() {
               element={
                 <ProtectedAdmin>
                   <PayrollAdmin showForm={showForm} toggleForm={toggleForm} />
+                </ProtectedAdmin>
+              }
+            />
+            <Route
+              path="/payment-process/:userId"
+              element={
+                <ProtectedAdmin>
+                  <PaymentPage />
                 </ProtectedAdmin>
               }
             />

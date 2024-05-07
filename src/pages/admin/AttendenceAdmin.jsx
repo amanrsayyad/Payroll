@@ -10,7 +10,6 @@ import {
   DashList,
   Border,
 } from "../../utils/DashboardStyles.js";
-import { IoIosAdd, IoTrashBinOutline } from "../../utils/Icons.js";
 import Sidebar from "../../components/Sidebar.js";
 import Header from "../../components/Header.js";
 import axios from "axios";
@@ -63,7 +62,9 @@ const AttendenceAdmin = () => {
                 <th>
                   <div className="jc-start">
                     All Records
-                    <div className="number d-flex">{getAttendence.length}</div>
+                    <div className="number d-flex">
+                      {getAttendence && getAttendence.length}
+                    </div>
                   </div>
                 </th>
                 <th></th>

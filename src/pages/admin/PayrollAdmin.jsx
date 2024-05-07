@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
   DashboardCard,
   DashboardBg,
@@ -13,8 +14,20 @@ import {
 import { IoIosAdd, IoTrashBinOutline } from "../../utils/Icons.js";
 import Sidebar from "../../components/Sidebar.js";
 import Header from "../../components/Header.js";
+import axios from "axios";
 
 const PayrollAdmin = () => {
+  const [getAttendence, setGetAttendence] = useState();
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://expensive-cod-turtleneck-shirt.cyclic.app/api/v1/attendence/get-attendence"
+      )
+      .then((response) => {
+        setGetAttendence(response.data);
+      });
+  }, []);
   return (
     <DashboardBg>
       <DashboardMain>
@@ -32,18 +45,35 @@ const PayrollAdmin = () => {
             <Border></Border>
             <DashList>
               <thead>
-                <th>Name</th>
-                <th>Date Posted</th>
-                <th>Paymemt</th>
+                <th>Date</th>
+                <th>Ride Pay ( ETH )</th>
+                <th>Pick Up Location</th>
+                <th>Drop Off Location</th>
                 <th>Action</th>
               </thead>
-              <tbody>
-                <td>You do not have any active listings.</td>
-              </tbody>
+              {getAttendence &&
+                getAttendence.map((item) => {
+                  return (
+                    <>
+                      <tbody key={item._id}>
+                        <td>{item.date}</td>
+                        <td>ETH {item.ridePay}</td>
+                        <td>{item.pickUp}</td>
+                        <td>{item.dropOff}</td>
+                        <td>
+                          <Link to={`/payment-process/${item.userId}`}>
+                            <button>Payment</button>
+                          </Link>
+                        </td>
+                      </tbody>
+                    </>
+                  );
+                })}
               <thead>
                 <th className="jc-start">
                   <IoTrashBinOutline className="icon" /> Delete All Listing
                 </th>
+                <th></th>
                 <th></th>
                 <th></th>
                 <th></th>

@@ -48,7 +48,7 @@ const RidePay = ({
       });
   }, [pickupCoordinates, dropoffCoordinates]);
 
-  const ridePrice = (rideDirection * 10).toFixed(2);
+  const ridePrice = (rideDirection * 10).toFixed(2) / 258965.68;
   console.log(ridePrice);
 
   const submitHandler = async () => {
@@ -86,7 +86,7 @@ const RidePay = ({
             <h3>Driver</h3>
           </div>
           <div>
-            <h2>{"₹" + (rideDirection * 10).toFixed(2)}</h2>
+            <h2>ETH {(rideDirection * 10).toFixed(2) / 258965.68}</h2>
           </div>
         </div>
       </RidePayout>

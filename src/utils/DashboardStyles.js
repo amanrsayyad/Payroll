@@ -199,7 +199,7 @@ export const DashList = styled.table`
       text-align: left;
       padding: 10px 55px;
       font-weight: 400;
-      font-size: 18px;
+      font-size: 16px;
 
       .icon {
         margin-right: 0.7rem;
@@ -217,7 +217,7 @@ export const DashList = styled.table`
       text-align: left;
       padding: 10px 55px;
       font-weight: 400;
-      font-size: 17px;
+      font-size: 14px;
       border-bottom: 1px solid #228b22;
 
       button {

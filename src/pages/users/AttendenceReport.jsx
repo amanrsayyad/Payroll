@@ -57,19 +57,18 @@ const AttendenceReport = () => {
             <DashList>
               <thead>
                 <th>Date</th>
-                <th>Ride Pay</th>
+                <th>Ride Pay ( ETH )</th>
                 <th>Pick Up Location</th>
                 <th>Drop Off Location</th>
               </thead>
               {getAttendence &&
                 getAttendence.map((item) => {
-                  console.log(getAttendence.length);
                   return (
                     <>
                       {item.userId === userName._id ? (
                         <tbody key={item._id}>
                           <td>{item.date}</td>
-                          <td>{item.ridePay}</td>
+                          <td>ETH {item.ridePay}</td>
                           <td>{item.pickUp}</td>
                           <td>{item.dropOff}</td>
                         </tbody>
@@ -81,7 +80,9 @@ const AttendenceReport = () => {
                 <th>
                   <div className="jc-start">
                     All Records
-                    <div className="number d-flex">{getAttendence.length}</div>
+                    <div className="number d-flex">
+                      {getAttendence && getAttendence.length}
+                    </div>
                   </div>
                 </th>
                 <th></th>

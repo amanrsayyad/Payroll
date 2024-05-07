@@ -33,7 +33,6 @@ const AddEmployee = () => {
       setLoading(true);
       const { data } = await axios.post(
         "https://expensive-cod-turtleneck-shirt.cyclic.app/api/v1/user/user-register",
-        // "http://localhost:8080/api/v1/user/user-register",
         {
           name,
           email,
@@ -52,7 +51,9 @@ const AddEmployee = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/v1/category/get-category")
+      .get(
+        "https://expensive-cod-turtleneck-shirt.cyclic.app/api/v1/category/get-category"
+      )
       .then((response) => {
         setGetGategory(response.data);
       });
