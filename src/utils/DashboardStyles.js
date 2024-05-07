@@ -323,6 +323,7 @@ export const DashForm = styled.form`
       border-radius: 8px;
       border: 1px solid #000;
       font-size: 16px;
+      font-weight: 500;
     }
     input,
     select {

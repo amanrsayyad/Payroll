@@ -139,7 +139,6 @@ const PaymentPage = () => {
                       );
                     })}
                 </div>
-                {/* recipient_address */}
                 <div className="input-div">
                   {getRecipient &&
                     getRecipient.map((item) => {
