@@ -23,6 +23,7 @@ import payroll from "../assets/payroll.png";
 import ui from "../assets/ui.png";
 import sec from "../assets/sec.png";
 import payment from "../assets/payment.png";
+import fox from "../assets/fox.png";
 import { MdOutlineErrorOutline } from "react-icons/md";
 
 export {
@@ -54,4 +55,5 @@ export {
   payment,
   MdOutlineErrorOutline,
   IoMdCheckmarkCircleOutline,
+  fox,
 };

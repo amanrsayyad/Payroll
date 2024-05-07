@@ -139,6 +139,35 @@ export const DashCard = styled.div`
   background-color: #fff;
   padding: 0px 35px;
   padding-bottom: 2rem;
+
+  .detail-card {
+    width: 550px;
+    padding: 7px 15px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    border: 2px solid #228b22;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: #1d1d1d;
+
+    span {
+      letter-spacing: 2.5px;
+      margin-right: 0.3rem;
+      color: #228b22;
+    }
+
+    img {
+      width: 35px;
+      height: 35px;
+      margin-right: 0.5rem;
+      margin-bottom: -0.3rem;
+    }
+  }
+  .m-Top {
+    margin-top: 1.5rem;
+  }
 `;
 
 export const DashHeader = styled.div`

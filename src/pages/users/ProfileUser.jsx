@@ -13,6 +13,8 @@ import { user } from "../../utils/Icons.js";
 import Sidebar from "../../components/Sidebar.js";
 import Header from "../../components/Header.js";
 import { Link } from "react-router-dom";
+import { toast } from "alert";
+import axios from "axios";
 
 const ProfileUser = () => {
   const [tab, setTab] = useState(1);
@@ -21,9 +23,36 @@ const ProfileUser = () => {
   };
 
   const [userData, setUserData] = useState([]);
+  const [userName, setUserName] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [recAddress, setRecAddress] = useState();
+
+  const submitHandler = async () => {
+    try {
+      setLoading(true);
+      const { data } = await axios.post(
+        "https://expensive-cod-turtleneck-shirt.cyclic.app/api/v1/recipient/add-recipient",
+        {
+          userId: userName,
+          recipient_address: recAddress,
+        }
+      );
+      setLoading(false);
+      console.log(data);
+      toast.success("Recipient Address is required");
+      setRecAddress("");
+    } catch (error) {
+      setLoading(false);
+      toast.error(error);
+    }
+  };
 
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("user"));
+    const username = JSON.parse(localStorage.getItem("user"));
+    if (username) {
+      setUserName(username);
+    }
     if (userData) {
       setUserData(userData);
     }
@@ -55,6 +84,12 @@ const ProfileUser = () => {
                 Edit
               </Link>
               <div className={tab === 2 ? "border" : ""}></div>
+            </li>
+            <li onClick={() => toggleTab(3)}>
+              <Link to="#" className={tab === 3 ? "active" : ""}>
+                Payment Info
+              </Link>
+              <div className={tab === 3 ? "border" : ""}></div>
             </li>
           </DashboardTabs>
           {tab === 1 ? (
@@ -93,6 +128,21 @@ const ProfileUser = () => {
                 />
               </div>
               <button>SAVE CHANGES</button>
+            </ProfileCard>
+          ) : null}
+          {tab === 3 ? (
+            <ProfileCard>
+              <h3>Payment Information</h3>
+              <div className="input-container">
+                <label>Recipient Address (required)</label>
+                <input
+                  type="text"
+                  value={recAddress}
+                  onChange={(e) => setRecAddress(e.target.value)}
+                  placeholder="Add recipient aqddress of your wallet"
+                />
+              </div>
+              <button onClick={submitHandler}>SAVE CHANGES</button>
             </ProfileCard>
           ) : null}
         </DashboardCard>

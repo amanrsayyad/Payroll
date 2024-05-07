@@ -47,8 +47,8 @@ const PayrollAdmin = () => {
               <thead>
                 <th>Date</th>
                 <th>Ride Pay ( ETH )</th>
-                <th>Pick Up Location</th>
-                <th>Drop Off Location</th>
+                <th>Pick Up & Drop Off Location</th>
+                <th>Employee Name</th>
                 <th>Action</th>
               </thead>
               {getAttendence &&
@@ -58,8 +58,10 @@ const PayrollAdmin = () => {
                       <tbody key={item._id}>
                         <td>{item.date}</td>
                         <td>ETH {item.ridePay}</td>
-                        <td>{item.pickUp}</td>
-                        <td>{item.dropOff}</td>
+                        <td>
+                          {item.pickUp} --- {item.dropOff}
+                        </td>
+                        <td>{item.employeeName}</td>
                         <td>
                           <Link to={`/payment-process/${item.userId}`}>
                             <button>Payment</button>
