@@ -16,6 +16,7 @@ import Sidebar from "../../components/Sidebar.js";
 import Header from "../../components/Header.js";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import { toast } from "alert";
 
 const PaymentPage = () => {
   let { userId } = useParams();
@@ -83,6 +84,22 @@ const PaymentPage = () => {
 
   const disableConnect = wallet && isConnecting;
 
+  // const sendEthBtn = () => {
+  //   provider
+  //     .request({
+  //       method: "eth_sendTransaction",
+  //       params: [
+  //         {
+  //           from: wallet.accounts[0],
+  //           to: ,
+  //           value: ,
+  //         },
+  //       ],
+  //     })
+  //     .then((txHash) => console.log(txHash))
+  //     .catch((error) => console.error(error));
+  // };
+
   useEffect(() => {
     axios
       .get(
@@ -123,42 +140,43 @@ const PaymentPage = () => {
             <Border></Border>
             <DashForm>
               <div className="grid-form">
-                <input type="text" placeholder="Recipient Address" />
-                <input type="text" placeholder="Amount in ETH" />
-              </div>
-              <div className="grid-form m-Top">
-                <div className="input-div">
-                  {getAttendence &&
-                    getAttendence.map((item) => {
-                      return (
-                        <>
-                          {item.userId === userId ? (
-                            <>Payment in ETH - {item.ridePay}</>
-                          ) : null}
-                        </>
-                      );
-                    })}
-                </div>
                 <div className="input-div">
                   {getRecipient &&
                     getRecipient.map((item) => {
                       return (
                         <>
                           {item.userId === userId ? (
-                            <>Recipient Address - {item.recipient_address}</>
+                            <>Employee Recipient Address - {item.recipient_address}</>
+                          ) : null}
+                        </>
+                      );
+                    })}
+                </div>
+                <div className="input-div">
+                  {getAttendence &&
+                    getAttendence.map((item) => {
+                      return (
+                        <>
+                          {item.userId === userId ? (
+                            <>Employee Ride Payment in ETH - {item.ridePay}</>
                           ) : null}
                         </>
                       );
                     })}
                 </div>
               </div>
-              {window.ethereum?.isMetaMask && wallet.accounts.length < 1 ? (
-                <button onClick={handleConnect}>Connect MetaMask</button>
-              ) : (
-                <button disabled={disableConnect} onClick={handleConnect}>
-                  Disconnect MetaMask
-                </button>
-              )}
+              <div className="grid-form m-Top">
+                <input type="text" placeholder="Recipient Address" />
+                <input type="text" placeholder="Amount in ETH" />
+              </div>
+              <div className="jc-start">
+                <button className="m-right">Pay ETH</button>
+                {window.ethereum?.isMetaMask && wallet.accounts.length < 1 ? (
+                  <button onClick={handleConnect}>Connect MetaMask</button>
+                ) : (
+                  <button>Disconnect MetaMask</button>
+                )}
+              </div>
             </DashForm>
             <div className="detail-card m-Top jc-start">
               <div>

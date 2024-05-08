@@ -168,6 +168,9 @@ export const DashCard = styled.div`
   .m-Top {
     margin-top: 1.5rem;
   }
+  .m-right {
+    margin-right: 1.5rem;
+  }
 `;
 
 export const DashHeader = styled.div`
